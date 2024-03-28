@@ -1,0 +1,5 @@
+Main.class
+service\Race.class
+domain\Tortoise.class
+domain\Animal.class
+domain\Rabbit.class
