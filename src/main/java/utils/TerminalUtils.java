@@ -28,7 +28,7 @@ public class TerminalUtils {
         }
     }
     public static void logPosition(Player player, Integer position){
-        var message = "[" + player.getClass().getSimpleName() + "] is in position: " + position;
+        var message = "[" + player.getClass().getSimpleName() + "] step: " + position;
         println(message);
     }
 

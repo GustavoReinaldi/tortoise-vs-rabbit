@@ -32,10 +32,9 @@ public abstract class Player implements Runnable{
             do {
                 Thread.sleep(1000 / this.getVelocity());
                 this.positionInMap += 1;
-
+                logPosition(this, this.positionInMap);
             } while (positionInMap != finishLine);
             raceFinishedAt = Instant.now().toEpochMilli();
-            println("Player [" + this.getClass().getSimpleName() + "] finished");
         } catch (InterruptedException ignored) {}
 
     }
