@@ -8,7 +8,6 @@ import static utils.TerminalUtils.*;
 
 public abstract class Player implements Runnable{
     private Integer positionInMap;
-    private Integer velocity;
     private Integer finishLine;
     private Long raceFinishedAt;
 
@@ -18,28 +17,25 @@ public abstract class Player implements Runnable{
     }
 
     public Integer getVelocity() {
-        return this.velocity;
+        return 0;
     }
 
     public Long getRaceFinishedAt() {
         return raceFinishedAt;
     }
 
-    public Integer getPositionInMap() {
-        return this.positionInMap;
-    }
 
     @Override
     public void run() {
+        println("Player [" + this.getClass().getSimpleName() + "] started");
         try {
             do {
                 Thread.sleep(1000 / this.getVelocity());
                 this.positionInMap += 1;
-//                logPosition(this, this.positionInMap);
 
             } while (positionInMap != finishLine);
             raceFinishedAt = Instant.now().toEpochMilli();
-
+            println("Player [" + this.getClass().getSimpleName() + "] finished");
         } catch (InterruptedException ignored) {}
 
     }
